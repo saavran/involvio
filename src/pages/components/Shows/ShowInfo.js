@@ -15,7 +15,7 @@ export default function ShowInfo(props) {
     return (
         <div className="show-info-wrappers">
             <div className="show-info-box">
-                <img src={showData.image && showData.image.medium} alt="Show Cover" />
+                <img src={showData && showData.image && showData.image.medium} alt="Show Cover" />
                 {renderButton()}
             </div>
             <div className="title">
