@@ -7,8 +7,6 @@ export default function ShowInfo(props) {
         console.log(props.addedToFavorites)
         if (props.favorite) {
             return <button className="remove" onClick={() => props.removeFromFavorite(props.index)}>Remove from Favorites</button>
-        } else if (props.addedToFavorites) {
-            return <button className="favorite">Added to Favorites</button>
         } else {
             return <button onClick={() => props.addToFavorite(showData)}>Add to Favorites</button>
         }
@@ -17,7 +15,7 @@ export default function ShowInfo(props) {
     return (
         <div className="show-info-wrappers">
             <div className="show-info-box">
-                <img src={showData.image.medium} alt="Show Cover" />
+                <img src={showData.image && showData.image.medium} alt="Show Cover" />
                 {renderButton()}
             </div>
             <div className="title">
