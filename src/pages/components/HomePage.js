@@ -5,10 +5,9 @@ import "./home-page.css"
 export default class Home extends Component {
     constructor() {
         super()
-        let favorites = localStorage.getItem("favoriteShows")
         this.state = {
             showData: [],
-            favoriteShows: JSON.parse(favorites) || []
+            favoriteShows: []
         }
     }
 
@@ -26,7 +25,6 @@ export default class Home extends Component {
     addFavorite = (show) => {
         let favorites = [...this.state.favoriteShows]
         favorites.push(show)
-        localStorage.setItem("favoriteShows", JSON.stringify(favorites))
         this.setState({
             favoriteShows: favorites
         })
@@ -36,7 +34,6 @@ export default class Home extends Component {
         let favorites = [...this.state.favoriteShows]
 
         favorites.splice(index, 1)
-        localStorage.setItem("favoriteShows", JSON.stringify(favorites))
         this.setState({
             favoriteShows: favorites
         })
